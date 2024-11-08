@@ -1,0 +1,76 @@
+package ac.emp.tut;
+
+import java.util.Scanner;
+import stackdiy.StackDIY;
+
+public class EmployerApp {
+    public static void main(String[] args) {
+        StackDIY st = new StackDIY();
+        Scanner kb = new Scanner(System.in);
+
+        int option = 0;
+
+        do {
+            System.out.print("Enter the option you wanna use \n" +
+                             "================================================================================================\n" + 
+                             "1 - Add employees to a list :\n" + 
+                             "2 - Display all the employees.\n" +
+                             "3 - Search for a specific employee using an ID number.\n"+
+                             "4 - Remove an employee from the list\n" + 
+                             "5 - Retrench a certain number of employees using the LIFO principle.\n" + 
+                             "6 - Retrench all the employees by clearing the list\n" +
+                             "7 - Exit\n");
+
+            option = kb.nextInt();
+            kb.nextLine();
+
+            switch(option) {
+                case 1: 
+                    st.AddEmployee();
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;   
+                
+                case 2: 
+                    st.DisplayEmployees();
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;
+                
+                case 3:
+                    System.out.print("Enter employee ID to search: ");
+                    String id = kb.nextLine();
+                    st.Search(id);
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;
+                
+                case 4:
+                    System.out.print("Enter employee ID to remove: ");
+                    id = kb.nextLine();
+                    st.Remove(id);
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;        
+                
+                case 5:
+                    System.out.print("Enter number of employees to retrench: ");
+                    int num = kb.nextInt();
+                    st.Retench(num);
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;
+                
+                case 6:
+                    st.RetenchAll();
+                    System.out.println("Enter any key to continue");
+                    kb.nextLine();
+                    break;
+                
+                case 7:
+                    System.out.println("==============================Thank you=======================================================\n");
+                    break;
+            }
+        } while(option != 7);
+    }
+}
