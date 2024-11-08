@@ -1,0 +1,62 @@
+package stackdiy;
+
+import java.util.Stack;
+import tut.empl.ac.Employees;
+
+public class StackDIY {
+    private Stack<Employees> employees = new Stack<>();
+
+    public void AddEmployee() {
+        employees.add(new Employees("Tebogo", "02034508"));
+        employees.add(new Employees("Mokgaga", "27484616"));
+        employees.add(new Employees("Thando", "8446461"));
+        if (employees.empty()) {
+            System.out.println("The list is empty\n\n");
+        } else {
+            System.out.println("Employees are added\n\n");
+        }
+    }
+
+    public void DisplayEmployees() {
+        if (employees.empty()) {
+            System.out.println("The list is empty");
+        } else {
+            for (Employees employee : employees) {
+                System.out.println(employee + "\n");
+            }
+        }
+    }
+
+    public Employees Search(String idNumber) {
+        for (Employees employee : employees) {
+            if (employee.getID().equals(idNumber)) {
+                System.out.println("Employee found: " + employee);
+                return employee;
+            }
+        }
+        System.out.println("Employee not found.");
+        return null;
+    }
+
+    public void Remove(String idNumber) {
+        Employees employee = Search(idNumber);
+        if (employee != null) {
+            employees.remove(employee);
+            System.out.println(idNumber + " is removed from the list");
+        } else {
+            System.out.println(idNumber + " is not removed from the list");
+        }
+    }
+
+    public void Retench(int element) {
+        for (int i = 0; i < element && !employees.isEmpty(); i++) {
+            Employees employee = employees.pop();
+            System.out.println("Retrenched employee: " + employee);
+        }
+    }
+
+    public void RetenchAll() {
+        employees.clear();
+        System.out.println("Workers all retrenched");
+    }
+}
