@@ -1,0 +1,32 @@
+document.getElementById('employeeForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const id = document.getElementById('id').value;
+    addEmployee(name, id);
+});
+
+function addEmployee(name, id) {
+    document.getElementById('output').innerText = `Added employee: ${name}, ID: ${id}`;
+}
+
+function displayEmployees() {
+    document.getElementById('output').innerText = 'Display Employees functionality';
+}
+
+function searchEmployee() {
+    const id = prompt('Enter employee ID to search:');
+    document.getElementById('output').innerText = `Search Employee functionality for ID: ${id}`;
+}
+
+function removeEmployee() {
+    const id = prompt('Enter employee ID to remove:');
+    document.getElementById('output').innerText = `Remove Employee functionality for ID: ${id}`;
+}
+
+function retrenchEmployees() {
+    const num = prompt('Enter number of employees to retrench:');
+    document.getElementById('output').innerText = `Retrench Employees functionality for ${num} employees`;
+}
+
+function retrenchAll() {
+    document.getElementById('output').innerText = 'Retrench All
