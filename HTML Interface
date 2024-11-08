@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employer App</h1>
+        <div class="form-container">
+            <form id="employeeForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+                <button type="submit">Add Employee</button>
+            </form>
+        </div>
+        <div class="menu">
+            <button onclick="displayEmployees()">Display all employees</button>
+            <button onclick="searchEmployee()">Search for an employee</button>
+            <button onclick="removeEmployee()">Remove an employee</button>
+            <button onclick="retrenchEmployees()">Retrench employees</button>
+            <button onclick="retrenchAll()">Retrench all employees</button>
+        </div>
+        <div id="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
